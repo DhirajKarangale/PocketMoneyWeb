@@ -17,13 +17,11 @@ import Hireread from "./components/hireread/Hireread";
 import HireJob from "./pages/hirejob";
 import Dashboardform from "./components/forms/Dashboardform";
 
-
 function App() {
 
   return (
     <BrowserRouter>
     <Navigation username="chirag" />
-      {/* {isLoggedIn ? <UserNavbar username="chirag" /> : <Navigation />} */}
       <Routes>
         <Route path="/" element={<LoginPage/>} />
         <Route path="/user/setRole" element={<SetRole/>} />
