@@ -38,9 +38,9 @@ function HireJob() {
     e.preventDefault();
     console.log("I want to hire you")
     Email.send({
-      SecureToken: '3304d1d1-67bc-45a1-836d-7e51dbcb2551',
+      SecureToken: '0547ced4-33f3-47c8-a8e4-5224380909ef',
       To: data.email,
-      From:'abhidesh16@gmail.com' ,
+      From:'dkhelp02@gmail.com' ,
       Subject: "Job application",
       Body: `Hii ${data.name} myself ${name} want to hire you .you can share your resume and details on ${email} for further process`,
     }).then((message) => alert(message));
@@ -48,7 +48,7 @@ function HireJob() {
 
   return (
     <Container className="post-container">
-      <Form onSubmit={handleSubmit} className="post-form">
+      <Form onSubmit={handleSubmit} className="post-form" style={{boxShadow:"#252627 5px 10px"}}>
         <Form.Group className="mb-3" controlId="formGridName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -63,7 +63,7 @@ function HireJob() {
 
         <Container className="text-center">
           <Button variant="dark" type="submit" style={{backgroundColor:"green"}}>
-            Hire !
+            Hire 
           </Button>
         </Container>
       </Form>

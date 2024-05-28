@@ -39,7 +39,8 @@ function ApplyJob() {
     e.preventDefault();
     console.log("Applied")
     Email.send({
-      SecureToken: '2bf444f3-cb85-4ace-8f49-76f91c378c20',
+      // SecureToken: '2bf444f3-cb85-4ace-8f49-76f91c378c20',
+      SecureToken: '0547ced4-33f3-47c8-a8e4-5224380909ef',
       To: data.email,
       From:'dkhelp02@gmail.com' ,
       Subject: "Job application",
@@ -61,7 +62,7 @@ function ApplyJob() {
 
   return (
     <Container className="post-container">
-      <Form onSubmit={handleSubmit} className="post-form">
+      <Form onSubmit={handleSubmit} className="post-form" style={{boxShadow:"#252627 5px 10px"}}>
         <Form.Group className="mb-3" controlId="formGridName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -87,5 +88,6 @@ function ApplyJob() {
     </Container>
   );
 }
+
 
 export default ApplyJob;

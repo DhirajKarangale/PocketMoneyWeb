@@ -5,6 +5,10 @@ import officeImg from '../../assets/icons/Logo.png'
 
 import { projectFirestore } from "../../firebase/config";
 import { collection, getDocs } from 'firebase/firestore/lite';
+import searchIMG from '../../assets/icons/search.png';
+import postimg from '../../assets/profile/post.png'
+import imgPost from '../../assets/profile/jobseeker.png';
+import imgProvid from '../../assets/profile/jobprovider.png';
 
 function FindJob() {
 
@@ -102,52 +106,53 @@ function FindJob() {
 
   return (
     <Container className="mt-4">
-
-      <div className="position-relative position-relative-example">
-        <div className="position-absolute bottom-40 end-0">
-          <Form onSubmit={handleSubmit}>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleChange} value={searchTerm} />
-            <Button variant="outline-success" type="submit">Search</Button>
+<div style={{display:"flex",flexDirection: "row-reverse", justifyContent:"space-between"}}>
+        <div className="search" style={{    display: "flex",
+    alignItems: "center",
+    flexDirection: "row-reverse"}}>
+          <Form onSubmit={handleSubmit} style={{display:"flex" }}>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={handleChange} value={searchTerm}  style={{borderRight:"0px",borderRadius:"6px"}}/>
+            <Button type="submit" style={{background: "none" , border:"1px solid grey",borderRadius:"0px", height:"52px" , margin:"0px" , padding: "0px",width:"auto"}}><img src={searchIMG} type="submit" style={{height:"50px" , background:"#e74c94" ,filter:"invert(1)", padding:"10.5px"} }/></Button>
           </Form>
-        </div>
-      </div>
-
-      <h2 className="text-center">Job Openings</h2><br />
-      <Link to={`/user/setRole`}>
-        <div className="d-flex align-items-center mb-4 text-center">
-          <Button variant="dark" size="lg">
+         </div>
+        <div className="d-flex align-items-center mb-4 text-center"><Link to={`/user/setRole`}>
+          {/* <Button variant="dark" size="lg" >
             Post
-          </Button>
+          </Button> */}
+          <img src={postimg} title="Post" style={{height:"63px",width:"63px"}}/>
+          </Link>
         </div>
-      </Link>
+        </div>
+        <div>
       {jobs && jobs.map((job, id) => {
         return (
-          <Card style={{ marginBottom: "40px" }} key={id}>
+          <Card style={{ marginBottom: "40px" ,boxShadow:"5px 10px grey"}} key={id}>
             <Row>
               <Col md={3} className="text-center p-4">
                 <Card.Img
                   variant="top"
-                  src={officeImg}
-                  style={{ width: "80%" }}
+                  src={imgProvid}
+                  style={{ width: "80%"}}
                 />
               </Col>
               <Col>
                 <Card.Body>
-                  <Card.Title>
-                    {job.profile}, {job.company}
-                  </Card.Title>
-                  <Card.Text>
-                    {job.desc.substring(0, 200)}....<br />
-                  </Card.Text>
+                <Card.Title style={{ fontfamily: 'Robotosans-serif', fontWeight: 'bold' ,fontSize:"28px"}}>
+  {job.company}, {job.profile}
+</Card.Title>
+
+                  <Card.Text style={{ fontFamily: 'Franklin Gothic Demi Cond',fontSize:"18px" }}>
+  {job.desc.substring(0, 200)}....<br />
+</Card.Text>
                   <Card.Text>
                     Location: {job.location}<br />
                   </Card.Text>
                   <Link to={`/jobform/${job.id}`}>
-                    <Button variant="dark" style={{ backgroundColor: "green" }} >Apply Now</Button>
+                    <Button variant="dark" style={{ backgroundColor: "green" , width:"100px" , height:"45px"}} >Apply</Button>
                   </Link>
 
                   <Link to={`/findJob/${job.id}`}>
-                    <Button variant="dark" >Read more</Button>
+                    <Button variant="dark" style={{width:"140px",height:"45px"}} >Read more</Button>
                   </Link>
 
                 </Card.Body>
@@ -158,28 +163,31 @@ function FindJob() {
       })}
       {post && post.map((post, id) => {
         return (
-          <Card style={{ marginBottom: "40px" }} key={id}>
+          <Card style={{ marginBottom: "40px",  boxShadow:"5px 10px grey" }} key={id}>
             <Row>
               <Col md={3} className="text-center p-4">
                 <Card.Img
                   variant="top"
-                  src={officeImg}
+                  src={imgPost}
                   style={{ width: "80%" }}
                 />
               </Col>
               <Col>
                 <Card.Body>
-                  <Card.Title>
+                  <Card.Title style={{ fontfamily: 'Robotosans-serif', fontWeight: 'bold' ,fontSize:"28px"}}>
                     {post.name}, {post.role}
                   </Card.Title>
-                  <Card.Text>
+                  <Card.Text style={{ fontFamily: 'Franklin Gothic Demi Cond',fontSize:"18px" }}>
                     {post.desc.substring(0, 100)}<br />
                   </Card.Text>
+                  <Card.Text>
+                    Location: {post.location}<br />
+                  </Card.Text>
                   <Link to={`/hireme/${post.id}`}>
-                    <Button variant="dark" style={{ backgroundColor: "blue" }}>Hire Me !</Button>
+                    <Button variant="dark" style={{ backgroundColor: "green",width:"100px",height:"45px"}}>Hire</Button>
                   </Link>
                   <Link to={`/findJob/post/${post.id}`}>
-                    <Button variant="dark" >Read more</Button>
+                    <Button variant="dark" style={{width:"140px",height:"45px"}} >Read more</Button>
                   </Link>
                 </Card.Body>
               </Col>
@@ -187,7 +195,9 @@ function FindJob() {
           </Card>
         );
       })}
+      </div>
     </Container>
+
   );
 }
 
