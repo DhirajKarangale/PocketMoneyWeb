@@ -4,13 +4,13 @@ import { getFirestore } from 'firebase/firestore/lite';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDswl9oilXED5Syguhuto7-ToYg2UGCe6o",
-  authDomain: "pocketmoney-5c987.firebaseapp.com",
-  projectId: "pocketmoney-5c987",
-  storageBucket: "pocketmoney-5c987.appspot.com",
-  messagingSenderId: "418851442769",
-  appId: "1:418851442769:web:f84178c930fbee8ce92870",
-  measurementId: "G-VT789ZB1QZ"
+  apiKey: "AIzaSyCqXp5-E40SNDkLh-uw3aLPZe1gcTQ561k",
+  authDomain: "pocketmoney-a4b80.firebaseapp.com",
+  projectId: "pocketmoney-a4b80",
+  storageBucket: "pocketmoney-a4b80.firebasestorage.app",
+  messagingSenderId: "978440924992",
+  appId: "1:978440924992:web:8e8b42f7decf94bc4d94a5",
+  measurementId: "G-CSKLLR163Z"
 };
 
 //init firebase
