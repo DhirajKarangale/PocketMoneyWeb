@@ -3,6 +3,7 @@
 A web application connecting students with part-time and internship opportunities across various domains. Built with **React.js** and **Firebase**, it supports real-time job listings, secure authentication, messaging, and dynamic job filters.
 
 **Live Demo:** [https://pocket-money-web.vercel.app/](https://pocket-money-web.vercel.app/)
+</br>
 **GitHub Repository:** [https://github.com/DhirajKarangale/PocketMoneyWeb](https://github.com/DhirajKarangale/PocketMoneyWeb)
 
 ---
@@ -117,23 +118,25 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ---
 
-## 📸 Screenshots
+## 📸 Preview
+
+![PocketMoney Demo](/public/preview/PocketMoney.gif)
 
 | Home                                 | Add Job                            |
 | ------------------------------------ | ---------------------------------- |
-| ![Home](public/Screenshots/Home.png) | ![Add](public/Screenshots/Add.png) |
+| ![Home](public/preview/Home.png) | ![Add](public/preview/Add.png) |
 
 | Dashboard                                      | Job Provider Profile                                             |
 | ---------------------------------------------- | ---------------------------------------------------------------- |
-| ![Dashboard](public/Screenshots/Dashboard.png) | ![JobProviderProfile](public/Screenshots/JobProviderProfile.png) |
+| ![Dashboard](public/preview/Dashboard.png) | ![JobProviderProfile](public/preview/JobProviderProfile.png) |
 
 | Job Seeker Profile                                          | Login                                  |
 | ----------------------------------------------------------- | -------------------------------------- |
-| ![JobSeekerProfile](public/Screenshots/JobSeekerProfil.png) | ![Login](public/Screenshots/Login.png) |
+| ![JobSeekerProfile](public/preview/JobSeekerProfil.png) | ![Login](public/preview/Login.png) |
 
 | Signup                                   |
 | ---------------------------------------- |
-| ![Signup](public/Screenshots/Signup.png) |
+| ![Signup](public/preview/Signup.png) |
 
 ---
 
